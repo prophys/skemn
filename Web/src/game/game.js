@@ -9,6 +9,9 @@ Nemonemo({
 
 function Nemonemo(args) {
 
+	/*
+	* Initialize variables
+	*/
 	var $ = args.jQuery,
 		gameContainer = args.gameContainer || $('#Game'),
 		width = args.width || (args.size && args.size[0]) || 10,
@@ -29,26 +32,29 @@ function Nemonemo(args) {
 	}
 
 	View.prototype.Initialize = function() {
-		gameContainer.empty();
-	}
+		var i, j;
 
-	View.prototype.Draw = function() {
+		gameContainer.empty();
+		var table = $('<table></table>');
+		var horizonView = '<tr>';
+		for(i=0; i<width; ++i) {
+			horizonView += '<td class="h' + i + '"></td>';
+		}
+		horizonView += '</td>';
+		table.append($(horizonView));
+		gameContainer.html(table);
 	}
 
 	/*
 	* Controller
 	*/
-	var Controller = function() {
+	var Controller = function(model, view) {
 		this.model = model;
 		this.view = view;
 	}
 
 	Controller.prototype.Start = function() {
 		this.view.Initialize();
-	}
-
-	Controller.prototype.DoUpdate = function() {
-		this.view.Draw(this.model);
 	}
 
 	/*
