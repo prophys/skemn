@@ -1,10 +1,10 @@
 Nemonemo({
 	jQuery: $,
 	gameContainer: $('#Game'),
-	width: 10,
-	height : 10,
+	width: 5,
+	height : 5,
 	gameMode: 'Play', //Create, Modify
-	quiz: [] // if Play mode, need this value
+	quiz: [3, 10, 17] // if Play mode, need this value
 });
 
 function Nemonemo(args) {
@@ -23,6 +23,9 @@ function Nemonemo(args) {
 	* Model 
 	*/
 	var Model = function() {
+	}
+
+	Model.prototype.ParseQuiz = function() {
 	}
 
 	/*
