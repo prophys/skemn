@@ -1,7 +1,9 @@
 import os
 from os import walk
 
-gameScript = '(function() {'
+gameScript = '// This is automatically generated file.\r'
+gameScript = gameScript + '// Do not modify this file.\r'
+gameScript = gameScript + '(function() {'
 
 for (dirpath, dirnames, filenames) in walk('.\\src'):
 	for filename in filenames:
@@ -9,12 +11,12 @@ for (dirpath, dirnames, filenames) in walk('.\\src'):
 		print 'parsing..' + path
 		f = open(path, 'r+')
 		script = f.read()
-		gameScript = gameScript + '\r\n'
+		gameScript = gameScript + '\r'
 		gameScript = gameScript + script
 
-gameScript = gameScript + '\r\n'
+gameScript = gameScript + '\r'
 gameScript = gameScript + 'Main();'
-gameScript = gameScript + '\r\n'
+gameScript = gameScript + '\r'
 gameScript = gameScript + '}())'
 
 try:

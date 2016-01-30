@@ -1,12 +1,10 @@
-(function() {
-/*
+// This is automatically generated file.// Do not modify this file.(function() {/*
 * GameConfig
 */
 function GameConfig() {
 };
 GameConfig.fps = 32;
-
-/*
+/*
 * GameObject class
 */
 function GameObject(args) {
@@ -90,8 +88,7 @@ GameObject.prototype = {
 		this.isDestroyed = true;
 		this.actions = null;
 	}
-};
-/*
+};/*
 * GamePlay
 */
 function GamePlay() {
@@ -119,8 +116,7 @@ GamePlay.prototype = {
 		this.gameWorld = null;
 		this.tickManager = null;
 	}
-};
-/*
+};/*
 * GameWorld class
 */
 function GameWorld() {
@@ -181,15 +177,13 @@ GameWorld.prototype = {
 		this.temp = null;
 		GameWorld.Instance = null;
 	}
-};
-/*
+};/*
 * Main
 */
 function Main() {
 	var gamePlay = new GamePlay();
 	gamePlay.Initialize();
-}
-/*
+}/*
 * TickManager class
 */
 function TickManager(gameWorld) {
@@ -220,8 +214,7 @@ TickManager.prototype = {
 	Dispose: function() {
 		this.gameWorld = null;
 	}
-}
-/*
+}/*
 * Time
 */
 function Time() {
@@ -230,8 +223,7 @@ function Time() {
 Time.Now = Date.now;
 Time.time = Time.Now() / 1000;
 Time.fixedDelta = 1/GameConfig.fps;
-
-/*
+/*
 * Util
 */
 function Util() {
@@ -240,8 +232,7 @@ function Util() {
 Util.Log = function() {
 	console.log.apply(console, arguments);
 }
-
-/*
+/*
 * ACGameMode class
 */
 function ACGameMode() {
@@ -296,8 +287,7 @@ ACGameMode.prototype = {
 	Dispose: function() {
 		this.player = null;
 	}
-}
-/*
+}/*
 * ACWalk action class
 */
 function ACWalk(args) { 
@@ -319,8 +309,7 @@ ACWalk.prototype = {
 		this.gameObject = null;
 		this.isFinished = true;
 	}
-};
-/*
+};/*
 * ACWalkFight action class
 */
 function ACWalkFight(args) { 
@@ -370,6 +359,4 @@ ACWalkFight.prototype = {
 		this.gameObject = null;
 		this.isFinished = true;
 	}
-};
-Main();
-}())
+};Main();}())
