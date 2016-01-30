@@ -23,3 +23,5 @@ except OSError:
     pass
 sf = open('game.js', 'w+')
 sf.write(gameScript)
+
+os.system('index.html')

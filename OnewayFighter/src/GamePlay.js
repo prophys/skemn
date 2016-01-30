@@ -12,13 +12,11 @@ GamePlay.prototype = {
 		this.gameWorld = new GameWorld();
 		this.tickManager = new TickManager(this.gameWorld);
 
-		var player = new GameObject({
-			id: 'player',
-			name: 'player',
-			speed: 1
+		var gameMode = new GameObject({
+			id: 'gameMode',
+			name: 'gameMode'
 		});
-
-		player.AddAction(new ACWalk());
+		gameMode.AddAction(new ACGameMode());
 
 		// 게임 틱 매니저를 업데이트 한다.
 		this.tickManager.Start();
