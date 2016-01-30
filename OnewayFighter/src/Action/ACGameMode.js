@@ -34,6 +34,11 @@ ACGameMode.prototype = {
 			var mob = new GameObject({
 				id: 'Mob_' + (++this.mobIdx),
 				name: 'Mob',
+				teamId: 'red',
+				position: {
+					x: 10,
+					y: 0
+				},
 				tags: {
 					unit: true
 				}

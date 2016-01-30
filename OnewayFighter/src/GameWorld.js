@@ -43,7 +43,7 @@ GameWorld.prototype = {
 		var range = args.range;
 		var tag = args.tag || null;
 		for(var i=0, len=this.gameObjects.length; i<len; ++i) {
-			if (tag != null && this.gameObjects[i].tags[tag] == false) {
+			if (tag != null && !this.gameObjects[i].tags[tag]) {
 				continue;
 			}
 			if (Math.abs(from.x - this.gameObjects[i].position.x) <= range) {

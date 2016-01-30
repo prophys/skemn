@@ -78,7 +78,7 @@ GameObject.prototype = {
 		var hp = this.hp;
 		this.hp = Math.max(0, this.hp - damage);
 		var delta = hp - this.hp;
-		Util.Log(this.name, ' damaged from ', attacker.name, ' amount ', delta);
+		Util.Log(this.name, ' damaged from ', attacker.name, ' amount ', delta, ' hp ', this.hp);
 
 		if (this.hp <= 0) {
 			Util.Log(this.name, ' dead.');
@@ -165,7 +165,7 @@ GameWorld.prototype = {
 		var range = args.range;
 		var tag = args.tag || null;
 		for(var i=0, len=this.gameObjects.length; i<len; ++i) {
-			if (tag != null && this.gameObjects[i].tags[tag] == false) {
+			if (tag != null && !this.gameObjects[i].tags[tag]) {
 				continue;
 			}
 			if (Math.abs(from.x - this.gameObjects[i].position.x) <= range) {
@@ -277,6 +277,11 @@ ACGameMode.prototype = {
 			var mob = new GameObject({
 				id: 'Mob_' + (++this.mobIdx),
 				name: 'Mob',
+				teamId: 'red',
+				position: {
+					x: 10,
+					y: 0
+				},
 				tags: {
 					unit: true
 				}

@@ -70,7 +70,7 @@ GameObject.prototype = {
 		var hp = this.hp;
 		this.hp = Math.max(0, this.hp - damage);
 		var delta = hp - this.hp;
-		Util.Log(this.name, ' damaged from ', attacker.name, ' amount ', delta);
+		Util.Log(this.name, ' damaged from ', attacker.name, ' amount ', delta, ' hp ', this.hp);
 
 		if (this.hp <= 0) {
 			Util.Log(this.name, ' dead.');
