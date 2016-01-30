@@ -3,8 +3,9 @@
 * GameConfig
 */
 function GameConfig() {
-	GameConfig.fps = 32;
-};
+};
+GameConfig.fps = 32;
+
 /*
 * GameObject class
 */
@@ -177,10 +178,11 @@ TickManager.prototype = {
 * Time
 */
 function Time() {
-	Time.fixedDelta = 1/GameConfig.fps;
 }
 
-Time.Now = Date.now;
+Time.Now = Date.now;
+Time.fixedDelta = 1/GameConfig.fps;
+
 /*
 * Util
 */

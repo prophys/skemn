@@ -2,5 +2,5 @@
 * GameConfig
 */
 function GameConfig() {
-	GameConfig.fps = 32;
 };
+GameConfig.fps = 32;
