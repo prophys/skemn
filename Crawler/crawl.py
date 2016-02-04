@@ -2,7 +2,7 @@
 import urllib
 from bs4 import BeautifulSoup
 
-html = urllib.urlopen('http://otorrent.me/i/board.php?bo_table=newumav&sca=&sfl=wr_subject%7C%7Cwr_5&sop=and&stx=%E3%83%AC%E3%82%BA&x=33&y=6')
+html = urllib.urlopen('http://nemonemologic.com')
 
 soup = BeautifulSoup(html, "lxml")
 titles = soup.find_all("a", "title")
