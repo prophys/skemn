@@ -2,13 +2,30 @@
 <html>
 	<head>
 		<title>mud</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+		<div id="contents">
+		</div>
+		<div>
+			<input id="cmd" type="text" name="cmd">
+		</div>
+		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script src="socket.io.js"></script>
 		<script>
+			var conDiv = $('#contents');
 			var socket = io('http://localhost/');
-			socket.on('connected', function (data) {
-				socket.emit('userinfo', 'lsk');
+			socket.on('rst', function (data) {
+				conDiv.append('<p>' + data + '</p>');
+			});
+
+			var cmd = $('#cmd');
+			cmd.keypress(function(e) {
+				if (e.which != 13) return;
+
+				var val = cmd.val();
+				socket.emit('cmd', val);
+				cmd.val('');
 			});
 		</script>
 	</body>

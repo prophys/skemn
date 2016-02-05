@@ -7,6 +7,7 @@ function GameObject(args) {
 	this.id = args.id;
 	this.name = args.name;
 	this.position = args.position || { x:0, y:0 };
+	this.components = {};
 	this.tags = args.tags || {};
 	this.isDestroyed = false;
 	this.actions = [];
