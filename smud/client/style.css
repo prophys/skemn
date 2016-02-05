@@ -1,4 +1,29 @@
 body {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family:Dotum,'돋움'
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  background-color: #999999;
+  display: block;
+  width: 100%;
+  appearance: none;
+  box-shadow: none;
+  box-decoration-break: none;
+  border-radius: none;
+  border-spacing: 0;
+  border-style: none;
+  outline: none;
+  margin: 0;
+  padding: 5;
+  position: absolute;
+  bottom: 1px;
 }

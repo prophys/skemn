@@ -1,14 +1,15 @@
 <!doctype html>
-<html>
+<html lang="ko">
 	<head>
-		<title>mud</title>
+		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>mud</title>
 	</head>
 	<body>
 		<div id="contents">
 		</div>
 		<div>
-			<input id="cmd" type="text" name="cmd">
+			<input id="cmd" type="text" placeholder="명령어를 입력하세요." name="cmd">
 		</div>
 		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script src="socket.io.js"></script>
@@ -16,6 +17,7 @@
 			var conDiv = $('#contents');
 			var socket = io('http://localhost/');
 			socket.on('rst', function (data) {
+				data = replaceColor(data);
 				conDiv.append('<p>' + data + '</p>');
 			});
 
@@ -27,6 +29,10 @@
 				socket.emit('cmd', val);
 				cmd.val('');
 			});
+
+			function replaceColor(src) {
+				return src;
+			}
 		</script>
 	</body>
 </html>
